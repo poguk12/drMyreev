@@ -65,7 +65,9 @@
                     Наша главная цель - заработать очень много много деняг
                 </div>
 
-                <button class="main__button">Услуги</button>
+                <button class="main__button" onclick="document.querySelector('.usluge').scrollIntoView({behavior: 'smooth'})">
+                    Услуги
+                </button>
             </div>
         </div>
         
@@ -85,7 +87,7 @@
                     <img src="img/smile.jpg" alt="улыбка" class="usluge__offer-logo">
                     <h3 class="usluge__offer-zagolovok">Лечение зубов</h3>
                     <p class="usluge__offer-opisanie">С чего начать лечение зубов? С личной консультации квалифицированного врача. объективного осмотра.</p>
-                    <button class="main__button usluge__offer-button">УЗНАТЬ ЦЕНУ</button>
+                    <button class="main__button usluge__offer-button button_okno" onclick="openModal()">УЗНАТЬ ЦЕНУ</button>
 
                 </div>
                 <div class="usluge__offer-two usluge__offer-glavnuy">
@@ -95,7 +97,7 @@
                     <p class="usluge__offer-opisanie">Один из самых эффективных методов
                         лечения адентии. В костную ткань
                         вживляется имплантат из сплава титана.</p>
-                    <button class="main__button usluge__offer-button">УЗНАТЬ ЦЕНУ</button>
+                    <button class="main__button usluge__offer-button button_okno" onclick="openModal()">УЗНАТЬ ЦЕНУ</button>
 
                 </div>
                 <div class="usluge__offer-three usluge__offer-glavnuy">
@@ -103,7 +105,7 @@
                     <img src="img/prikus.jpg" alt="улыбка" class="usluge__offer-logo">
                     <h3 class="usluge__offer-zagolovok">Исправление привкуса</h3>
                     <p class="usluge__offer-opisanie">В современном мире эта стоматологическая услуга необходима весьма значительному количеству людей.</p>
-                    <button class="main__button usluge__offer-button">УЗНАТЬ ЦЕНУ</button>
+                    <button class="main__button usluge__offer-button button_okno" onclick="openModal()">УЗНАТЬ ЦЕНУ</button>
 
                 </div>
             </div>
@@ -219,12 +221,59 @@
             </div>
             
             <div class="price__button">
-                <button>Узнать точную цену</button>
+                <button class="button_okno" onclick="openModal()">Узнать точную цену</button>
             </div>
 
         </div>
 
     </section>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Узнать точную цену</h2>
+            <form class="modal-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Ваш телефон" required>
+                <input type="email" placeholder="Ваш email">
+                <select>
+                    <option value="">Выберите услугу</option>
+                    <option value="consult">Консультация</option>
+                    <option value="treatment">Лечение зубов</option>
+                    <option value="implant">Имплантация</option>
+                    <option value="braces">Брекеты</option>
+                </select>
+                <textarea placeholder="Дополнительная информация"></textarea>
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        
+        // Закрытие при клике вне окна
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Обработка формы
+        document.querySelector('.modal-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо! Мы свяжемся с вами для уточнения цены.');
+            closeModal();
+        });
+        </script>
 
 </body>
 </html>
