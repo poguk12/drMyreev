@@ -576,6 +576,164 @@ body{
     margin: 0;
 }
 
+/* Стили для блока "Команда" */
+.team__bg {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background: var(--light);
+}
+
+.team__header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team__header-text {
+    font-size: 2.5em;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Главный врач */
+.team__glav-vrach {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.team__glav-vrach-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border: 5px solid var(--accent);
+}
+
+.team__glav-vrach-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team__glav-name {
+    font-size: 1.5em;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.team__glav-vrach-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--secondary);
+    max-width: 600px;
+}
+
+/* Врачи */
+.team__doctors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.team__doctors-vrach,
+.team-doctors-vrach {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 35px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.team__doctors-vrach:hover,
+.team-doctors-vrach:hover {
+    transform: translateY(-5px);
+}
+
+.team__doctors-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid var(--secondary);
+}
+
+.team__doctors-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team__doctors-name {
+    font-size: 1.3em;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.team__doctors-text {
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--secondary);
+}
+
+/* Компетенции */
+.team__competention {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.team__competention-block {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+    background: var(--light);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.team__competention-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.team__competention-header {
+    font-size: 1.3em;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.team__competention-text {
+    font-size: 1em;
+    line-height: 1.8;
+    color: var(--secondary);
+    white-space: pre-line;
+    flex-grow: 1;
+}
+
 /* Стили модального окна */
 .modal {
     display: none;
